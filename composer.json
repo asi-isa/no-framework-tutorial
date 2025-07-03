@@ -15,7 +15,8 @@
   ],
   "require": {
     "php": ">=8.4",
-    "filp/whoops": "~2.18.3"
+    "filp/whoops": "~2.18.3",
+    "symfony/http-foundation": "^7.3"
   },
   "autoload": {
     "psr-4": {

@@ -21,4 +21,17 @@ if ($environment !== 'production') {
 }
 $whoops->register();
 
-throw new \Exception;
+use Symfony\Component\HttpFoundation\Request;
+
+$request = Request::createFromGlobals();
+
+use Symfony\Component\HttpFoundation\Response;
+
+$response = new Response(
+    '<h1>Hello World</h1>',
+    Response::HTTP_OK,
+    ['content-type' => 'text/html']
+);
+
+$response->prepare($request);
+$response->send();
